@@ -1,0 +1,17 @@
+-- 동물 수 카운트 하기
+SELECT COUNT(ANIMAL_ID) "count" -- "count"라는 새로운 컬럼을 만듬.
+FROM ANIMAL_INS
+
+-- 중복 제거하기
+SELECT COUNT(DISTINCT NAME) -- NAME 컬럼 중복 제거
+FROM ANIMAL_INS
+
+-- 이름이 없는 동물 (NULL 값)
+SELECT ANIMAL_ID
+FROM ANIMAL_INS
+WHERE NAME IS NULL -- 이름이 있는 동물 값  : IS NOT NULL
+
+-- NULL 처리하기
+---- IFNULL : NULL 값이면 "No name"을 표시하기
+SELECT ANIMAL_TYPE, IFNULL(NAME, "No Name") AS NAME, SEX_UPON_INTAKE
+FROM ANIMAL_INS

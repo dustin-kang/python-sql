@@ -10,12 +10,6 @@
 └── sqls
     ├── README.md
     └── programmers
-        ├── groupby
-        ├── is-null
-        ├── join
-        ├── select
-        ├── string,date
-        └── sum-max-min
 ```
 
 ## **🐍 pythons**
