@@ -16,3 +16,12 @@ FROM ANIMAL_OUTS
 WHERE HOUR BETWEEN 9 AND 19 -- 해당 시간대를 조회한다.
 GROUP BY HOUR -- HOUR 컬럼으로 묶는다. 
 ORDER BY HOUR
+
+-- 보호소에서 몇시에 입양이 가장 활발한지. 시간대(HOUR)별 입양건수 조사
+SET @HOUR = -1;
+SELECT (@HOUR := @HOUR +1) AS HOUR,
+    (SELECT COUNT(HOUR(DATETIME)) 
+        FROM ANIMAL_OUTS 
+        WHERE HOUR(DATETIME)=@HOUR) AS COUNT  -- 변수와 같은 시간 컬럼으로 카운트 열을 생성한다. 
+    FROM ANIMAL_OUTS
+WHERE @HOUR < 23;
