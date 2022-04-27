@@ -6,10 +6,11 @@
 ├── pythons
 │   ├── README.md
 │   ├── baekjoon
-│   └── leatcode
+│   └── py_leetcode
 └── sqls
     ├── README.md
-    └── programmers
+    ├── programmers
+    └── sql_leetcode
 ```
 
 ## **🐍 pythons**
@@ -25,4 +26,5 @@ Python 관련 문제 풀이 및 공부
 SQL 관련 문제 풀이 및 공부
 ### 📕 [programmers](https://programmers.co.kr/learn/challenges?tab=sql_practice_kit)
 - 프로그래머스 사이트 SQL 문제 풀이
-
+### 📕 [leetcode](https://leetcode.com/study-plan/sql/?progress=tdvteg5)
+- 리트코트 사이트 SQL 문제 풀이

@@ -1,5 +1,7 @@
 ### 📂 [SQL/programmers](https://github.com/dustin-kang/python-sql/tree/main/SQL/programmers)
 프로그래머스 문제 풀이
+### 📂 [SQL/sql_leetcode](https://github.com/dustin-kang/python-sql/tree/main/SQL/sql_leetcode)
+리트코드 문제 풀이
 
 
 ### Reference
