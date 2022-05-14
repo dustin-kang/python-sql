@@ -18,7 +18,15 @@ Output: ["g1 act car","a8 act zoo","ab1 off key dog","a1 9 2 3 1","zo4 4 7"]
 
 logs = ["dig1 8 1 5 1","let1 art can","dig2 3 6","let2 own kit dig","let3 art zero"]
 
+letters, digits = [], []
 
 for log in logs:
-    if type(log[-1]) == int:
-        print('int')
+    if log.split()[1].isdigit(): # 2번에 의거해 슷자로그와 문자로그를 구분하여 저장한다.
+        digits.append(log)
+    else : 
+        letters.append(log)
+
+# 숫자로그는 입력 순서대로 그대로 저장한다.
+# 문자로그는 문자로그 순서대로 하되 동일한 경우 식별자 순서대로 저장한다. (x.split()[0])
+letters.sort(key=lambda x: (x.split()[1:], x.split()[0]))
+print (letters + digits) # 리스트 이어 붙이기
