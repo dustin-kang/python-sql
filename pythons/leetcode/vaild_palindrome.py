@@ -15,12 +15,23 @@ s = "A man, a plan, a canal: Panama"
 lst = []
 
 for char in s:
-    if char.isalnum():
-        lst.append(char.lower())
+    if char.isalnum(): # 만약 알파벳 숫자라면
+        lst.append(char.lower()) # 소문자로 리스트에 넣는다
     else :
         pass
 
-while len(lst) > 1 :
-    if lst.pop(0) != lst.pop():
-        print(False)
+while len(lst) > 1 : # 리스트 갯수가 1개일 때 까지 반복
+    if lst.pop(0) != lst.pop(): # 맨 첫 자리와 맨 뒷자리 비교
+        print(False) # 같지 않을 경우 False 출력
 print(True)
+
+# ---------------가장 빠른 방법----------------------
+
+import re
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = s.lower()
+        s = re.sub('[^a-z0-9]','',s) # 정규표현식을 이용하는 방법
+         
+        return s == s[::-1] # 문자열 뒤집기
