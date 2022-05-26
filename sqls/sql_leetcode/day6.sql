@@ -39,4 +39,23 @@ select distinct s.product_id, product_name
 from Sales s join Product p on s.product_id = p.product_id
 where s.product_id not in (select product_id  from Sales  where datediff(sale_date, '2019-01-01') < 0 or datediff(sale_date, '2019-03-31') > 0)
 
--- 1158. Market Analysis I << 여기서 부터 시작
+-- 1158. Market Analysis I 
+SELECT u.user_id as buyer_id, u.join_date, SUM(
+    CASE WHEN o.order_date LIKE '2019-%' THEN 1
+    ELSE 0
+    END) AS orders_in_2019
+FROM Users AS u LEFT JOIN Orders AS o   
+    ON u.user_id = o.buyer_id
+GROUP BY u.user_id
+
+-- or
+
+SELECT u.user_id as buyer_id, u.join_date, 
+SUM(
+    CASE WHEN YEAR(o.order_date) = '2019' THEN 1
+    ELSE 0
+    END) AS orders_in_2019
+FROM Users AS u LEFT JOIN Orders AS o  -- user_id를 기준열로 테이블을 변경해야하기 떄문에 LEFT JOIN
+    ON u.user_id = o.buyer_id
+GROUP BY u.user_id
+ORDER BY u.user_id
