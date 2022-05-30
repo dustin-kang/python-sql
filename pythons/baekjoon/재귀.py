@@ -120,14 +120,6 @@ Fn = Fn-1 + Fn-2 (n ≥ 2)
 ~~~
 """
 
-star = """***\n* *\n***"""
-
-def star10(n, star):
-    if n > 3:
-        width = n / 3
-        print(f"{star}*width")
-
-
 
 
 """
@@ -159,3 +151,15 @@ def star10(n, star):
 2 3
 1 3
 """
+
+# n = int(input())
+# def hanoi_top(n, start, end):
+#     if n == 1:
+#         print(start, end)
+#         return
+#     hanoi_top(n-1, start, 6-start-end) # 1단계
+#     print(start, end) # 2단계
+#     hanoi_top(n-1, 6-start-end, end) # 3단계
+
+# print(2**n-1)
+# hanoi_top(n, 1, 3)
