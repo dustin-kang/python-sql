@@ -16,23 +16,20 @@ SUM(CASE WHEN month='Dec' THEN revenue END) AS Dec_Revenue
 FROM Department
 GROUP BY id
 
--- 620.
+-- 620. Not Boring Movies
+SELECT *
+FROM Cinema
+WHERE (description != "boring") and (id%2 != 0)
+ORDER BY rating desc
 
--- 626.
+-- 596. Classes More Than 5 Students
+SELECT class
+FROM Courses
+Group by class
+HAVING count(class) >= 5
 
-
--- 596. 
-
-
--- 601.
-
--------
-
-
--- 180.
-
--- 181.
-
--- 184.
-
--- 185. 
+-- 181.  Employees Earning More Than Their Managers
+-- 매니저보다 많이 버는 직원
+SELECT e1.name AS Employee
+FROM Employee as e1 JOIN Employee as e2 ON e1.managerId = e2.id
+WHERE e1.salary > e2.salary

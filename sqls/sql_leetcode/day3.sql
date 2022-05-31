@@ -32,3 +32,10 @@ CASE
     ELSE 'Leaf' -- 자식 노드
 END as type
 FROM Tree 
+
+-- 180. Consecutive Numbers
+-- 연속적인 숫자 찾기
+SELECT DISTINCT l1.num as ConsecutiveNums FROM Logs as l1 
+JOIN Logs as l2 ON l1.id+1 = l2.id
+JOIN Logs as l3 ON l2.id+1 = l3.id
+WHERE ((l1.num = l2.num) AND (l2.num = l3.num))
