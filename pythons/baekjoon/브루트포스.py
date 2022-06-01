@@ -7,6 +7,7 @@
 - 영화 감독 숌 (1436)
 """
 import sys
+from tkinter import N
 """
 2798
 블랙잭
@@ -42,4 +43,68 @@ def blackjack():
         sum = max(max_lst)
     return sum
 
-print(blackjack())
+# print(blackjack())
+
+
+"""
+2231
+분해합
+
+- 분해합  : 어떤 자연수가 있을 경우 각 자리수의 합을 의미 (245의 분해합 : 245 + 2 + 4 + 5 = 256)
+- 생성자 : 어떤 자연수의 분해합이 N인 경우 자연수를 N의 생성자라 칭함  (245가 256의 생성자)
+
+자연수 N이 주어졌을 경우, N의 가장 작은 생성자를 구하는 프로그램 작성
+
+
+[입력]
+216
+
+[출력]
+198
+
+[설명]
+없는 경우 0을 출력
+"""
+class Decompos:
+    def __init__(self):
+        pass
+
+    def desum(self, n):
+        """
+        분해합 구하기
+        """
+        s = n
+
+        numstr = str(n)
+        for i in range(len(numstr)):
+            s = s + int(numstr[i])
+        return s
+
+    def findCon(self, m):
+        """
+        생성자 확인
+        """
+        for i in range(m):
+            if m == self.desum(i) : 
+                return i
+        return 0
+
+# decom = Decompos()
+# n = int(input())
+# decom.findCon(n)
+
+
+def decom2():
+    n = int(input())
+    result = 0
+    for i in range(1, n+1):
+        a = list(map(int, str(i))) # 1~ 그 수까지 리스트에 넣기 (1, 9 , 8)
+        result = i + sum(a) #
+        if result == n :
+            print(i)
+            break
+        
+        if i == n : # 생성자가 없는 경우
+            print(0)
+
+print(decom2())
