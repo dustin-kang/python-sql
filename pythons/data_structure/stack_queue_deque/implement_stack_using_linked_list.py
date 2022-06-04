@@ -22,9 +22,9 @@ class Stack:
         ### 연결리스트 요소 추가
         - 가장 마지막값 self.top을 next로 설정
         """
-        new_node = ListNode(val, self.top)
-        self.top = new_node
-        return new_node.val
+        new_node = ListNode(val, self.top) # 신규 노드 생성
+        self.top = new_node # 신규노드를 최상단에 삽입
+        return new_node.val # 신규노드 리턴
 
     
     def pop(self):
@@ -35,9 +35,9 @@ class Stack:
         """
         if self.top is not None:
             # TOP이 비어 있지 않은 경우
-            popped_data = self.top
-            self.top = popped_data.next
-            return popped_data.val
+            popped_data = self.top # 최상단 노드를 삭제할 노드로 지정
+            self.top = popped_data.next # 최상단 다음 노드를 최상단 노드로 지정
+            return popped_data.val # 삭제할 노드 리턴
 
 
     def ord_desc(self):
