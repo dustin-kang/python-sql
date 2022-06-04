@@ -64,12 +64,12 @@ class Queue:
         
         if self.rear is None:
             # 큐가 비어있는 경우
-            self.front = new_node
+            self.front = new_node 
             self.rear = new_node
         else : 
             # 하나라도 채워있는 경우
-            self.rear.next = new_node 
-            self.rear = new_node
+            self.rear.next = new_node # 새로 들어온 노드를 rear 값으로 설정
+            self.rear = new_node # 재할당
         return new_node.val
 
     def dequeue(self):
