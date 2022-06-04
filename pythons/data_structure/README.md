@@ -5,7 +5,7 @@
 ## Linear Structure
 탐색하기 쉬운 순차적(Sequential)으로 배열되는 자료구조
 
-### [Array](https://github.com/dustin-kang/python-sql/tree/main/pythons/data_structure/array)
+### 📘 [Array](https://github.com/dustin-kang/python-sql/tree/main/pythons/data_structure/array)
 - Two sum ⭐️
 - Trapping rain Water ⭐️⭐️⭐️
 - Three sum ⭐️⭐️
