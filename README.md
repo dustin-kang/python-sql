@@ -1,12 +1,14 @@
-# 파이썬 SQL 코딩 테스트 문제풀이
-- 1일 1코딩
+# 🔥 Coding Test using Python, SQL 
 
+## 🌳 File Tree
 ```
 ├── README.md
+├── birthday.py
 ├── pythons
 │   ├── README.md
 │   ├── baekjoon
-│   └── py_leetcode
+│   ├── data_structure
+│   └── leetcode
 └── sqls
     ├── README.md
     ├── programmers
