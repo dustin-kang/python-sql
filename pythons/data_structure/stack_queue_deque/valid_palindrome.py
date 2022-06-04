@@ -16,3 +16,31 @@ Output: true
 Input: s = "(]"
 Output: false
 """
+
+
+class Solution:
+    def isValid(self, s : str):
+        stack = []
+        table = {
+            ')' : '(',
+            '}' : '{',
+            ']' : '['
+        }
+
+        for char in s:
+            if char not in table:  # '[{('
+                stack.append(char)
+            elif not stack or table[char] != stack.pop(): # )}] -> ({[ == stack element
+                # 스택이 없는 경우 : '}'
+                return False
+        return len(stack) == 0 # 스택 리스트가 비었을 경우 True
+
+sol = Solution
+
+e1 = "[]"
+e2 = "[](){}"
+e3 = "{)" # table[char] != stack.pop()
+e4 = "{()}" 
+e5 = "}" # Not Stack
+e6 = "{" # len(stack) == 0
+print(sol.isValid(sol, e6))
