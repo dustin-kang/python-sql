@@ -3,6 +3,7 @@
 연결리스트를 이용한 스택 ADT 구현
 """
 
+
 class ListNode:
     def __init__(self, val = 0, next = None):
         """
@@ -48,7 +49,48 @@ class Stack:
         while node:
             print(node.val)
             node = node.next
+
+
+class Queue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+
+    def enqueue(self, val):
+        """
+        ### 연결리스트에 값을 삽입하는 함수
+        """
+        new_node = ListNode(val, next=None)
         
+        if self.rear is None:
+            # 큐가 비어있는 경우
+            self.front = new_node
+            self.rear = new_node
+        else : 
+            # 하나라도 채워있는 경우
+            self.rear.next = new_node 
+            self.rear = new_node
+        return new_node.val
+
+    def dequeue(self):
+        """
+        ### 연결리스트에 값을 삭제하는 경우
+        """
+        if self.front is not None:
+            # 큐가 비어있지 않은 경우
+            old_front = self.front
+            self.front = old_front.next
+        if self.front is None:
+            # 큐가 비어있는 경우
+            self.rear = None 
+        return old_front.val # 구 프론트 제거
+
+    def ord_desc(self):
+        node = self.front
+        while node:
+            print(node.val)
+            node = node.next
+
 stack = Stack()
 stack.pop()
 stack.push(1)
@@ -58,3 +100,14 @@ stack.push(3)
 stack.ord_desc()
 stack.pop()
 stack.ord_desc()
+
+
+queue = Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.enqueue(4)
+queue.ord_desc()
+queue.dequeue()
+queue.dequeue()
+queue.ord_desc()
