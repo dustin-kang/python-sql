@@ -107,4 +107,52 @@ def decom2():
         if i == n : # 생성자가 없는 경우
             print(0)
 
-print(decom2())
+# print(decom2())
+
+
+"""
+7568
+덩치
+
+키와 몸무게를 이용하여 덩치 등수를 매기는 문제
+
+- 덩치가 더 큰 경우 :  몸무게 비교 와 키 비교 둘다 큰 경우
+
+
+[입력]
+N (전체 사람 수)
+x, y (키와 몸무게)
+
+[출력]
+
+
+[예시]
+
+5
+55 185
+58 183
+88 186
+60 175
+46 155
+
+2 2 1 2 5
+"""
+
+
+num_student = int(input())
+student_list = []
+
+for _ in range(num_student):
+    weight, height = map(int, input().split())
+    student_list.append((weight, height))
+
+for i in student_list:
+    rank = 1
+    for j in student_list:
+        if i[0] < j[0] and i[1] < j[1]:
+                rank += 1
+    print(rank, end = " ")
+
+
+
+
