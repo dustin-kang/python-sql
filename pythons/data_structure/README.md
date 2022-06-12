@@ -22,11 +22,23 @@
 - Swap Nodes in Pairs ⭐️⭐️
 - Odd Even Linked List ⭐️⭐️
 - Reverse Linked List 2 ⭐️⭐️
+
 ### 📘 [Stack_Queue_Deque](https://github.com/dustin-kang/python-sql/tree/main/pythons/data_structure/stack_queue_deque) 
 - Stack ADT using LinkedList
 - Stack and Queue Lecture
 - Deque Lecture
 - Valid Parentheses ⭐️
+- remove Duplicate letter ⭐️⭐️⭐️
 - Implement Stack using Queue ⭐️
 - Implement Queue using Stack ⭐️
+- Merge K sorted list (Prioirity Queue) ⭐️⭐️
+- Daily Temperatures(Stack) ⭐️⭐️
 - Design Circular Deque ⭐️⭐️
+- Design Circular Queue ⭐️⭐️
+
+### 📘 [Hash Table](https://github.com/dustin-kang/python-sql/tree/main/pythons/data_structure/hash_table) 
+- Hash table Lecture
+- Hash collision Lecture
+
+## Non-Linear Structure
+선형으로 배열되지 않은 자료구조
