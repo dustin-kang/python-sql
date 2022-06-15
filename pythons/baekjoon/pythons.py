@@ -1,7 +1,9 @@
+# 인공지능 시계 (2530)
+
 import sys
 
-h,m,s = map(int, sys.stdin.readline().split())
-time = int(input())
+# h,m,s = map(int, sys.stdin.readline().split())
+# time = int(input())
 
 def koi(h,m,s,time):
     if time >= 60:
@@ -44,4 +46,9 @@ def koi1(h,m,s,time):
     return result
 
 
-print(koi1(h,m,s,time))
+# print(koi1(h,m,s,time))
+
+
+lst =  list(map(int, sys.stdin.readline().split()))
+lst = sorted(lst)
+print(lst[1])
