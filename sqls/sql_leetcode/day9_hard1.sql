@@ -1,6 +1,20 @@
 -- 185. Department Top Three Salaries
 -- 부서별로 가장 많이 번 사람 순위
-
+SELECT
+    d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
+FROM
+    Employee e1
+        JOIN
+    Department d ON e1.DepartmentId = d.Id
+WHERE
+    3 > (SELECT
+            COUNT(DISTINCT e2.Salary)
+        FROM
+            Employee e2
+        WHERE
+            e2.Salary > e1.Salary
+                AND e1.DepartmentId = e2.DepartmentId
+        )
 
 -- 601. Human Traffic of Stadium
 -- 적어도 id가 3번 연속 100이상인 people 출력
